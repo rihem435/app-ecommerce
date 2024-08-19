@@ -12,10 +12,17 @@ class TextStyles {
     fontWeight: FontWeightHelper.extraLight,
     shadows: <Shadow>[
       Shadow(
-        offset: Offset(5, 5),
+        offset: Offset(2, 2),
         blurRadius: 3.0,
         color: Color.fromARGB(255, 0, 0, 0),
       ),
     ],
+  );
+  static TextStyle font26BlackBold = TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 26.sp,
+    decoration: TextDecoration.none,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeightHelper.bold,
   );
 }
