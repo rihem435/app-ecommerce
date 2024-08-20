@@ -8,17 +8,19 @@ class InputTextApp extends StatelessWidget {
   final IconData? prefixIcon;
   final Widget? iconVisbility;
   final bool? obscureText;
+  final TextEditingController? controller;
   const InputTextApp(
       {Key? key,
       this.label,
       this.prefixIcon,
       this.iconVisbility,
-      this.obscureText})
+      this.obscureText, this.controller})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
         label: Text(
@@ -51,6 +53,15 @@ class InputTextApp extends StatelessWidget {
           ),
         ),
         errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            style: BorderStyle.solid,
+            color: AppColors.redColor,
+          ),
+          borderRadius: BorderRadius.circular(
+            20,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             style: BorderStyle.solid,
             color: AppColors.redColor,

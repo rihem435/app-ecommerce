@@ -12,6 +12,9 @@ class CreateDeliveryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController firstNameController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
     return CustomBackgroundImageScreen(
       image: "bg_delivery.jpg",
       widget: Padding(
@@ -44,6 +47,7 @@ class CreateDeliveryScreen extends StatelessWidget {
               InputTextApp(
                 label: "FirstName",
                 prefixIcon: Icons.person,
+                controller: firstNameController,
               ),
               SizedBox(
                 height: 15.h,
@@ -58,7 +62,15 @@ class CreateDeliveryScreen extends StatelessWidget {
                   ),
                 ),
                 obscureText: true,
+                controller: passwordController,
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    print('firstname============>$firstNameController');
+
+                    print('firstname text============>${firstNameController.text}');
+                  },
+                  child: Text("add"))
             ],
           ),
         ),
