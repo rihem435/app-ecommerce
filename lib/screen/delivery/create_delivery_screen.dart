@@ -2,6 +2,7 @@ import 'package:app/core/theme/app_colors.dart';
 import 'package:app/core/theme/font_weight_helper.dart';
 import 'package:app/core/theme/styles.dart';
 import 'package:app/core/widgets/app/custom_background_image_screen.dart';
+import 'package:app/core/widgets/app/input_text_app.dart';
 import 'package:app/core/widgets/on_boarding/title_emoji_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,47 +41,24 @@ class CreateDeliveryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  label: Text(
-                    'First Name',
-                    style: TextStyle(
-                      color: AppColors.blackColor,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeightHelper.medium,
-                      fontFamily: "Poppins",
-                    ),
-                  ),
-                  suffixIcon: Icon(
-                    Icons.person,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      style: BorderStyle.solid,
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      20,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      style: BorderStyle.solid,
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      20,
-                    ),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      style: BorderStyle.solid,
-                      color: AppColors.redColor,
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      20,
-                    ),
+              InputTextApp(
+                label: "FirstName",
+                prefixIcon: Icons.person,
+              ),
+              SizedBox(
+                height: 15.h,
+              ),
+              InputTextApp(
+                label: "Password",
+                prefixIcon: Icons.lock,
+                iconVisbility: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.visibility,
                   ),
                 ),
-              )
+                obscureText: true,
+              ),
             ],
           ),
         ),

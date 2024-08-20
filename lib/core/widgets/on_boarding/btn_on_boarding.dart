@@ -1,5 +1,6 @@
 import 'package:app/core/theme/font_weight_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BtnOnBoarding extends StatelessWidget {
   final void Function()? onTap;
@@ -24,8 +25,8 @@ class BtnOnBoarding extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: width,
-        height: 65,
+        width: width!.w,
+        height: 65.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(
@@ -43,8 +44,9 @@ class BtnOnBoarding extends StatelessWidget {
           text!,
           style: TextStyle(
             color: colorText,
-            fontSize: 20,
+            fontSize: 18.sp,
             decoration: TextDecoration.none,
+            overflow: TextOverflow.ellipsis,//affiche ...
             fontFamily: 'Poppins',
             fontWeight: FontWeightHelper.regular,
           ),

@@ -7,7 +7,7 @@ import 'package:app/screen/profile/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoarding2Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomOnBoarding(
@@ -15,8 +15,14 @@ class OnBoardingScreen extends StatelessWidget {
       image: "on_boarding.png",
       emoji: "🤩",
       title: "Our shop delivery\napp brings your need.",
-      sousTitle:
-          "With our user-fheridly food delivery an you will enjoy the ummate convenience",
+      sousTitle: Expanded(
+        child: Text(
+          "With our user-fheridly food delivery an you will enjoy the ummate convenience"!,
+          style: TextStyles.font15WhiteExtraLight,
+        ),
+      ),
+      flexBtn1: 2,
+      flexBtn2: 2,
       button1: BtnOnBoarding(
         borderColor: AppColors.blackColor,
         colorText: AppColors.whiteColor,

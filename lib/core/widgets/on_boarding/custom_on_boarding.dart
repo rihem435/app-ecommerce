@@ -9,9 +9,13 @@ class CustomOnBoarding extends StatelessWidget {
 
   final String? title;
   final String? emoji;
-  final String? sousTitle;
+  final Widget? sousTitle;
+  final Widget? codeVerification;
+
   final Widget? button1;
   final Widget? button2;
+  final int? flexBtn1;
+  final int? flexBtn2;
 
   const CustomOnBoarding(
       {Key? key,
@@ -21,7 +25,10 @@ class CustomOnBoarding extends StatelessWidget {
       this.sousTitle,
       this.button1,
       this.button2,
-      this.backGroundImage})
+      this.backGroundImage,
+      this.codeVerification,
+      this.flexBtn1,
+      this.flexBtn2})
       : super(key: key);
 
   @override
@@ -59,22 +66,21 @@ class CustomOnBoarding extends StatelessWidget {
                   emoji: emoji,
                 ),
               ),
-              Expanded(
-                child: Text(
-                  sousTitle!,
-                  style: TextStyles.font15WhiteExtraLight,
-                ),
-              ),
+              sousTitle ?? const SizedBox.shrink(),
+              //if codeVerification null affiche SizedBox.shrink()
+              codeVerification ?? const SizedBox.shrink(),
               Expanded(
                 child: Row(
                   children: [
                     Expanded(
+                      flex: flexBtn1!,
                       child: button1!,
                     ),
                     SizedBox(
                       width: 10.w,
                     ),
                     Expanded(
+                      flex: flexBtn2!,
                       child: button2!,
                     ),
                   ],
